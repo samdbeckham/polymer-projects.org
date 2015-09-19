@@ -63,7 +63,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                 <template>
                     <paper-card heading="[[site.name]]">
                         <div class="card-content">[[site.description]]</div>
-                        <div class="card-actions">[[site.url]]</div>
+                        <div class="card-actions">
+                            <a href="[[site.url]]" title="[[site.name]]">
+                                <paper-button>Visit</paper-button>
+                            </a>
+                        </div>
                     </paper-card>
                     <div>
                     </div>
