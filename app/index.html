@@ -58,7 +58,17 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <body unresolved>
         <span id="browser-sync-binding"></span>
         <template is="dom-bind" id="app">
-            <!-- Content goes in here -->
+            <iron-ajax url="sites.json" last-response="{{sites}}" auto></iron-ajax>
+                <template is="dom-repeat" items="[[sites]]" as="site">
+                    <paper-card heading="[[site.name]]" class="site">
+                        <div class="card-content">[[site.description]]</div>
+                        <div class="card-actions">
+                            <a href="[[site.url]]" title="[[site.name]]">
+                                <paper-button>Visit</paper-button>
+                            </a>
+                        </div>
+                    </paper-card>
+                </template>
         </template>
         <!-- build:js scripts/app.js -->
             <script src="scripts/app.js"></script>
