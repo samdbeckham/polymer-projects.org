@@ -58,9 +58,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <body unresolved>
         <span id="browser-sync-binding"></span>
         <template is="dom-bind" id="app">
-            <iron-list items='[{"name": "Polymer Projects", "url": "http://polymer-projects.org", "description": "A place for all things built with Polymer"}]' as="site">
+            <iron-ajax url="sites.json" last-response="{{sites}}" auto></iron-ajax>
+            <iron-list items="[[sites]]" as="site">
                 <template>
                     <div>
+                        <h2>Site</h2>
                         Name: <span>[[site.name]]</span><br />
                         Url: <span>[[site.url]]</span><br />
                         Description: <span>[[site.description]]</span><br />
