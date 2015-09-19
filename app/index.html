@@ -59,9 +59,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <span id="browser-sync-binding"></span>
         <template is="dom-bind" id="app">
             <iron-ajax url="sites.json" last-response="{{sites}}" auto></iron-ajax>
-            <iron-list items="[[sites]]" as="site">
-                <template>
-                    <paper-card heading="[[site.name]]">
+                <template is="dom-repeat" items="[[sites]]" as="site">
+                    <paper-card heading="[[site.name]]" class="site">
                         <div class="card-content">[[site.description]]</div>
                         <div class="card-actions">
                             <a href="[[site.url]]" title="[[site.name]]">
@@ -69,10 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                             </a>
                         </div>
                     </paper-card>
-                    <div>
-                    </div>
                 </template>
-            </iron-list>
         </template>
         <!-- build:js scripts/app.js -->
             <script src="scripts/app.js"></script>
