@@ -61,11 +61,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             <iron-ajax url="sites.json" last-response="{{sites}}" auto></iron-ajax>
             <iron-list items="[[sites]]" as="site">
                 <template>
+                    <paper-card heading="[[site.name]]">
+                        <div class="card-content">[[site.description]]</div>
+                        <div class="card-actions">[[site.url]]</div>
+                    </paper-card>
                     <div>
-                        <h2>Site</h2>
-                        Name: <span>[[site.name]]</span><br />
-                        Url: <span>[[site.url]]</span><br />
-                        Description: <span>[[site.description]]</span><br />
                     </div>
                 </template>
             </iron-list>
